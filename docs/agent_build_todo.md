@@ -79,7 +79,20 @@ Create appropriate LLM prompt files first under `models/prompts/` (e.g., `fundam
 - [x] Test the FastAPI API via cURL or docs page.
 - [x] Review full end-to-end functionality via Streamlit.
 
-## Phase 8: V2 Upgrades (Indian Market Focus)
+## Phase 8: V3 Upgrades (Databases, React, MCP)
+- [ ] **Database Integration (SQLite)**:
+  - Implement `SQLAlchemy` ORM and define models for `User`, `QueryHistory`, and `AnalysisResult`.
+  - Restructure the FastAPI backend to store all final AI outputs into the `market_scholar.db`.
+- [ ] **MCP Server (SQLite)**:
+  - Create a Model Context Protocol tool that exposes the SQLite database so external AI (like Cursor/Claude) can query Market Scholar's historic research.
+- [ ] **Input-to-Output Caching (Memoization)**:
+  - Currently, we only cache raw datasets (prices/news). We must also cache the *final* AI generated reports.
+  - Add logic in the FastAPI router to detect duplicated User Queries (e.g. "Analyze INFY") and immediately return the mapped `AnalysisResult` from the Database/Cache without ever booting up the LangGraph pipeline, dropping latency to 0.05s.
+- [ ] **React Frontend Integration**:
+  - Deprecate Streamlit for a `Next.js` or `Vite + React` application.
+  - Rebuild the dashboard components using `TailwindCSS` and `TradingView Lightweight Charts`.
+
+## Phase 9: V2 Upgrades (Indian Market Focus)
 - [ ] **Interactive Candlestick Charts** (`frontend/streamlit_app.py`):
   - Add `plotly` or `lightweight-charts-python` to `requirements.txt`.
   - Replace the static `st.line_chart` with an interactive Candlestick chart displaying Open, High, Low, Close (OHLC).
@@ -97,7 +110,7 @@ Create appropriate LLM prompt files first under `models/prompts/` (e.g., `fundam
   - Implement a daily/weekly tracking tool to fetch Foreign and Domestic Institutional flow data for the broader Indian market or specific stocks.
   - Supply this institutional momentum data to the Technical/Aggregator agents.
 
-## Phase 9: Deployment (Option 1 - Decoupled Architecture)
+## Phase 10: Deployment (Option 1 - Decoupled Architecture)
 - [ ] **Step 1: Deploy Backend API to Render (Free)**
   - Go to Render.com and create a new **Web Service** tied to the GitHub repository.
   - Set the Start Command: `uvicorn backend.main:app --host 0.0.0.0 --port 10000`
@@ -110,16 +123,3 @@ Create appropriate LLM prompt files first under `models/prompts/` (e.g., `fundam
   - Set the Main file path to: `frontend/streamlit_app.py`.
   - In the Streamlit Advanced Settings -> Secrets, add the Render API URL: `API_URL = "https://market-scholar-api.onrender.com/api/analyze"`
   - Deploy the Streamlit application.
-
-## Phase 10: V3 Upgrades (Databases, React, MCP)
-- [ ] **Database Integration (SQLite)**:
-  - Implement `SQLAlchemy` ORM and define models for `User`, `QueryHistory`, and `AnalysisResult`.
-  - Restructure the FastAPI backend to store all final AI outputs into the `market_scholar.db`.
-- [ ] **MCP Server (SQLite)**:
-  - Create a Model Context Protocol tool that exposes the SQLite database so external AI (like Cursor/Claude) can query Market Scholar's historic research.
-- [ ] **Input-to-Output Caching (Memoization)**:
-  - Currently, we only cache raw datasets (prices/news). We must also cache the *final* AI generated reports.
-  - Add logic in the FastAPI router to detect duplicated User Queries (e.g. "Analyze INFY") and immediately return the mapped `AnalysisResult` from the Database/Cache without ever booting up the LangGraph pipeline, dropping latency to 0.05s.
-- [ ] **React Frontend Integration**:
-  - Deprecate Streamlit for a `Next.js` or `Vite + React` application.
-  - Rebuild the dashboard components using `TailwindCSS` and `TradingView Lightweight Charts`.
