@@ -1,6 +1,6 @@
 import os
 import json
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from config.settings import settings
 from services.data_fetcher import get_cached_news
@@ -32,7 +32,7 @@ def run_sentiment_agent(ticker: str) -> str:
     )
     
     try:
-        llm = ChatOpenAI(api_key=settings.OPENAI_API_KEY, model="gpt-4o-mini", temperature=0.1)
+        llm = ChatGoogleGenerativeAI(google_api_key=settings.GEMINI_API_KEY, model="gemini-2.5-flash", temperature=0.1)
         response = llm.invoke(formatted_prompt)
         logger.info(f"Sentiment Agent completed for {ticker}")
         return response.content

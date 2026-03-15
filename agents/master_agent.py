@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Literal, Optional
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from config.settings import settings
 from utils.logger import get_logger
 
@@ -15,8 +15,8 @@ def run_master_agent(query: str) -> MasterAgentResponse:
     logger.info(f"Master Agent started for query: '{query}'")
     
     # Very rudimentary fallback standard for parsing if LLM is down
-    if len(settings.OPENAI_API_KEY) < 5:
-        logger.warning("No OpenAI key detected. Falling back to naive parsing.")
+    if len(settings.GEMINI_API_KEY) < 5:
+        logger.warning("No Gemini API key detected. Falling back to naive parsing.")
         intent = "single_stock"
         if "portfolio" in query.lower():
             intent = "portfolio"
@@ -28,7 +28,7 @@ def run_master_agent(query: str) -> MasterAgentResponse:
         return MasterAgentResponse(intent=intent, tickers=tickers)
 
     try:
-        llm = ChatOpenAI(api_key=settings.OPENAI_API_KEY, model="gpt-4o-mini", temperature=0)
+        llm = ChatGoogleGenerativeAI(google_api_key=settings.GEMINI_API_KEY, model="gemini-2.5-flash", temperature=0)
         
         # Use Langchain's structured output
         structured_llm = llm.with_structured_output(MasterAgentResponse)

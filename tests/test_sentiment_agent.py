@@ -11,7 +11,7 @@ def test_run_sentiment_agent_no_data():
 def test_run_sentiment_agent_success():
     with patch('agents.sentiment_agent.get_cached_news') as mock_fetch:
         with patch('agents.sentiment_agent.analyze_sentiment') as mock_sa:
-            with patch('agents.sentiment_agent.ChatOpenAI') as mock_llm:
+            with patch('agents.sentiment_agent.ChatGoogleGenerativeAI') as mock_llm:
                 mock_fetch.return_value = [{"title": "Good News"}]
                 mock_sa.return_value = {"overall_score": 0.5, "overall_sentiment": "Bullish", "details": []}
                 

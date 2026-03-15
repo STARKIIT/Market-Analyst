@@ -12,7 +12,7 @@ def test_run_technical_agent_no_data():
 def test_run_technical_agent_success():
     with patch('agents.technical_agent.get_cached_history') as mock_fetch:
         with patch('agents.technical_agent.get_technical_indicators') as mock_ind:
-            with patch('agents.technical_agent.ChatOpenAI') as mock_llm:
+            with patch('agents.technical_agent.ChatGoogleGenerativeAI') as mock_llm:
                 mock_fetch.return_value = pd.DataFrame({'Close': [100, 101, 102]})
                 mock_ind.return_value = {"trend": "Bullish", "rsi": 60}
                 

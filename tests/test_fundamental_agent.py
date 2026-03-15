@@ -10,7 +10,7 @@ def test_run_fundamental_agent_no_data():
 
 def test_run_fundamental_agent_success():
     with patch('agents.fundamental_agent.fetch_fundamentals') as mock_fetch:
-        with patch('agents.fundamental_agent.ChatOpenAI') as mock_llm:
+        with patch('agents.fundamental_agent.ChatGoogleGenerativeAI') as mock_llm:
             mock_fetch.return_value = {"revenue": 100, "eps": 5}
             
             mock_instance = MagicMock()

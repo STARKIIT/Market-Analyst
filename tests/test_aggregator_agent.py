@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 from agents.aggregator_agent import run_aggregator_agent
 
 def test_run_aggregator_agent_success():
-    with patch('agents.aggregator_agent.ChatOpenAI') as mock_llm:
+    with patch('agents.aggregator_agent.ChatGoogleGenerativeAI') as mock_llm:
         mock_instance = MagicMock()
         mock_instance.invoke.return_value.content = "AAPL Outlook: Strong Buy"
         mock_llm.return_value = mock_instance

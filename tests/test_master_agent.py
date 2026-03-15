@@ -12,9 +12,9 @@ def test_run_master_agent_naive_fallback():
 
 def test_run_master_agent_success():
     with patch('agents.master_agent.settings') as mock_settings:
-        mock_settings.OPENAI_API_KEY = "dummy-key-for-test"
+        mock_settings.GEMINI_API_KEY = "dummy-key-for-test-long-enough"
         
-        with patch('agents.master_agent.ChatOpenAI') as mock_llm:
+        with patch('agents.master_agent.ChatGoogleGenerativeAI') as mock_llm:
             mock_instance = MagicMock()
             
             # Setup mock for with_structured_output chain

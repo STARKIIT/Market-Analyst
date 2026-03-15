@@ -1,5 +1,5 @@
 import os
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from config.settings import settings
 from utils.logger import get_logger
@@ -23,7 +23,7 @@ def run_aggregator_agent(ticker: str, fundamental_report: str, technical_report:
     )
     
     try:
-        llm = ChatOpenAI(api_key=settings.OPENAI_API_KEY, model="gpt-4o", temperature=0.1) # Aggregator gets better model
+        llm = ChatGoogleGenerativeAI(google_api_key=settings.GEMINI_API_KEY, model="gemini-2.5-flash", temperature=0.1) # Aggregator gets better model
         response = llm.invoke(formatted_prompt)
         logger.info(f"Aggregator Agent completed for {ticker}")
         return response.content
