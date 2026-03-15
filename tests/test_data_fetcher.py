@@ -41,4 +41,4 @@ def test_get_cached_news_cache_miss(tmpdir):
             result = get_cached_news("AAPL", 5)
             
             assert result == mock_news
-            mock_search.assert_called_once_with("AAPL stock news", 5)
+            mock_search.assert_called_once_with("AAPL stock OR share market news", 5)

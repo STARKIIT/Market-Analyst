@@ -4,7 +4,7 @@ import pandas as pd
 from typing import Dict, Any, Optional, List
 from utils.logger import get_logger
 from tools.yahoo_finance_tool import fetch_stock_history, fetch_fundamentals
-from tools.duckduckgo_tool import search_news
+from tools.news_tool import search_news
 
 logger = get_logger(__name__)
 
@@ -46,8 +46,11 @@ def get_cached_news(stock_name: str, max_results: int = 5) -> List[Dict[str, str
         except Exception as e:
             logger.error(f"Error reading news cache for {stock_name}: {str(e)}")
             
-    logger.info(f"Cache miss for {stock_name} news. Fetching from DuckDuckGo.")
-    query = f"{stock_name} stock news"
+    logger.info(f"Cache miss for {stock_name} news. Fetching from Google News.")
+    
+    # GNews handles all global tickers beautifully. We add market keywords so it focuses strictly on finance.
+    query = f"{stock_name} stock OR share market news"
+    
     news = search_news(query, max_results)
     
     if news:
