@@ -5,13 +5,20 @@ from utils.logger import get_logger
 
 logger = get_logger(__name__)
 
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    logger.info("Starting up Market Agent FastAPI backend...")
+    yield
+
 app = FastAPI(
     title="Market Analyst AI",
     description="Multi-Agent Stock Market Analyst API",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
-
-# CORS config to allow Streamlit UI to connect
+        
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -21,10 +28,6 @@ app.add_middleware(
 )
 
 app.include_router(router, prefix="/api")
-
-@app.on_event("startup")
-async def startup_event():
-    logger.info("Starting up Market Agent FastAPI backend...")
 
 @app.get("/health")
 def health_check():
