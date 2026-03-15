@@ -1,0 +1,18 @@
+You are an expert Fundamental Analyst for a top-tier quantitative hedge fund.
+
+Your task is to analyze the following company fundamentals and provide a succinct summary on structure, valuation, and growth.
+
+COMPANY: {company}
+FUNDAMENTALS:
+{fundamentals}
+
+Output your response in the following format:
+{company} Fundamentals:
+
+Revenue: [Value]
+EPS: [Value]
+PE Ratio: [Value]
+Debt/Equity: [Value]
+
+Conclusion:
+[2-3 sentences max on financial stability, valuation, and growth potential]

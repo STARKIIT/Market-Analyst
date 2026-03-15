@@ -34,47 +34,47 @@ This document acts as a precise, step-by-step checklist for an AI agent to build
 
 ## Phase 3: Core Agents Implementation
 Create appropriate LLM prompt files first under `models/prompts/` (e.g., `fundamental_prompt.txt`, `technical_prompt.txt`, `sentiment_prompt.txt`).
-- [ ] **Fundamental Agent (`agents/fundamental_agent.py`)**:
+- [x] **Fundamental Agent (`agents/fundamental_agent.py`)**:
   - **Inputs**: Ticker/Company name.
   - **Task**: Use Yahoo Finance tool to retrieve Revenue, EPS, PE ratio, Market Cap, Debt, Free Cash Flow, ROE, Profit Margin. Evaluate and output a succinct summary on structure, valuation, and growth.
-- [ ] **Technical Agent (`agents/technical_agent.py`)**:
+- [x] **Technical Agent (`agents/technical_agent.py`)**:
   - **Inputs**: Ticker historical data.
   - **Task**: Use Indicator Calculator service to find momentum signals (Bullish/Bearish, RSI status, MACD crosses).
-- [ ] **Sentiment Agent (`agents/sentiment_agent.py`)**:
+- [x] **Sentiment Agent (`agents/sentiment_agent.py`)**:
   - **Inputs**: Ticker/Company name.
   - **Task**: Scrape recent news using DuckDuckGo, extract headlines, formulate sentiment score, and yield news highlights with total sentiment bias.
-- [ ] *(Optional)* **Portfolio Agent (`agents/portfolio_agent.py`)**:
+- [x] *(Optional)* **Portfolio Agent (`agents/portfolio_agent.py`)**:
   - **Inputs**: A list of tickers.
   - **Task**: Fetch prices, calculate 1-year returns, evaluate volatility/risk, compute diversification metrics, and report sector exposure.
 
 ## Phase 4: LangGraph Orchestration & Aggregator
-- [ ] **Aggregator Node / Agent (`agents/aggregator_agent.py` or within langgraph pipeline)**:
+- [x] **Aggregator Node / Agent (`agents/aggregator_agent.py` or within langgraph pipeline)**:
   - **Task**: Take the compiled outputs from the Fundamental, Technical, and Sentiment agents and use LLM reasoning to summarize into a final unified recommendation.
-- [ ] **Master Orchestrator (`agents/master_agent.py`)**:
+- [x] **Master Orchestrator (`agents/master_agent.py`)**:
   - **Task**: Perform intent classification (`single_stock`, `portfolio`, `comparison`) based on the user's string query.
-- [ ] **LangGraph Pipeline (`backend/langgraph_pipeline.py`)**:
+- [x] **LangGraph Pipeline (`backend/langgraph_pipeline.py`)**:
   - Create the LangGraph structural `StateGraph`.
   - Wire the **Intent Classifier** routing to specific parallel executions (e.g., `run_parallel([fundamental, technical, sentiment])`).
   - Add the **Aggregator / Final Report** node at the end.
   - Implement streaming events to emit which agent is currently running.
 
 ## Phase 5: Backend API (FastAPI)
-- [ ] **API Router (`backend/router.py`)**:
+- [x] **API Router (`backend/router.py`)**:
   - Define Pydantic request and response models.
-  - Expose API Endpoints: `POST /analyze-stock`, `POST /analyze-portfolio`, `POST /compare-stocks`, `POST /agent-debug`.
-- [ ] **Server Initialization (`backend/main.py`)**:
+  - Expose API Endpoints: `POST /analyze-stock`, `POST /analyze-portfolio`, `POST /compare-stocks`, `POST /agent-debug`. (Note: condensed to a unified `/api/analyze` handling all intents dynamically)
+- [x] **Server Initialization (`backend/main.py`)**:
   - Setup FastAPI app and integrate it to execute the `langgraph_pipeline`.
   - Implement Server-Sent Events (SSE) or WebSockets to stream agent logs back to the frontend in real-time.
 
 ## Phase 6: Frontend (Streamlit UI)
-- [ ] **User Interface (`frontend/streamlit_app.py`)**:
+- [x] **User Interface (`frontend/streamlit_app.py`)**:
   - **Layout Constraints**: Implement Sidebar (Portfolio input, Timeframes) and Main Window.
   - **Core Feature - Search/Query**: Add form text input for user commands ("How is Reliance doing?").
-  - **Core Feature - Log Streaming**: Build an interface to connect to FastAPI endpoint and display live logs ("technical analysis running...").
+  - **Core Feature - Log Streaming**: Build an interface to connect to FastAPI endpoint and display live logs ("technical analysis running..."). (Streamlined via Tabs for explainable AI)
   - **Core Feature - Results Display**: Render the final LLM synthesized recommendation and display relevant financial charts using Streamlit primitives.
 
 ## Phase 7: Testing & Verification
-- [ ] Run isolated tests for tools (`tests/test_tools.py`) ensuring external dependencies map correctly.
-- [ ] Run module tests for agents to guarantee structurally accurate string outputs.
-- [ ] Test the FastAPI API via cURL or docs page.
-- [ ] Review full end-to-end functionality via Streamlit.
+- [x] Run isolated tests for tools (`tests/test_tools.py`) ensuring external dependencies map correctly.
+- [x] Run module tests for agents to guarantee structurally accurate string outputs.
+- [x] Test the FastAPI API via cURL or docs page.
+- [x] Review full end-to-end functionality via Streamlit.
