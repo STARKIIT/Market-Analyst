@@ -96,3 +96,17 @@ Create appropriate LLM prompt files first under `models/prompts/` (e.g., `fundam
 - [ ] **FII / DII Institutional Activity Tracker**:
   - Implement a daily/weekly tracking tool to fetch Foreign and Domestic Institutional flow data for the broader Indian market or specific stocks.
   - Supply this institutional momentum data to the Technical/Aggregator agents.
+
+## Phase 9: Deployment (Option 1 - Decoupled Architecture)
+- [ ] **Step 1: Deploy Backend API to Render (Free)**
+  - Go to Render.com and create a new **Web Service** tied to the GitHub repository.
+  - Set the Start Command: `uvicorn backend.main:app --host 0.0.0.0 --port 10000`
+  - Add `GEMINI_API_KEY` to the Render Environment Variables.
+  - Deploy and copy the resulting public API URL (e.g., `https://market-scholar-api.onrender.com`).
+- [ ] **Step 2: Update Frontend Environment Variables**
+  - Modify `frontend/streamlit_app.py` line 8 to accept dynamic API endpoints: `API_URL = os.environ.get("API_URL", "http://localhost:8000/api/analyze")`
+- [ ] **Step 3: Deploy Frontend to Streamlit Community Cloud (Free)**
+  - Go to share.streamlit.io and create a new app tied to the GitHub repository.
+  - Set the Main file path to: `frontend/streamlit_app.py`.
+  - In the Streamlit Advanced Settings -> Secrets, add the Render API URL: `API_URL = "https://market-scholar-api.onrender.com/api/analyze"`
+  - Deploy the Streamlit application.
