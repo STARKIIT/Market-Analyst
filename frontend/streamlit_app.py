@@ -72,11 +72,22 @@ if st.button("Analyze") and query:
                             st.subheader("Recent Price Action")
                             for ticker in tickers:
                                 try:
-                                    stock = yf.Ticker(ticker)
-                                    df = stock.history(period="1mo")
+                                    # Fallback logic for Indian stocks
+                                    tickers_to_try = [f"{ticker}.NS", ticker] if "." not in ticker else [ticker]
+                                    df = pd.DataFrame()
+                                    plot_ticker = ticker
+                                    
+                                    for t in tickers_to_try:
+                                        stock = yf.Ticker(t)
+                                        temp_df = stock.history(period="1mo")
+                                        if not temp_df.empty:
+                                            df = temp_df
+                                            plot_ticker = t
+                                            break
+                                            
                                     if not df.empty:
                                         st.line_chart(df['Close'])
-                                        st.caption(f"{ticker} - 1 Month Price")
+                                        st.caption(f"{plot_ticker} - 1 Month Price")
                                 except:
                                     pass
             else:
