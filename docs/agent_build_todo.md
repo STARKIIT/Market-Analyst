@@ -80,9 +80,9 @@ Create appropriate LLM prompt files first under `models/prompts/` (e.g., `fundam
 - [x] Review full end-to-end functionality via Streamlit.
 
 ## Phase 8: V3 Upgrades (Databases, React, MCP)
-- [ ] **CLI Manager Script (`manage.py` / `scholar.cmd`)**:
-  - Create a unified command-line interface to boot the application, replacing the need to keep multiple terminals open.
-  - Commands should include `boot` (starts FastAPI + Streamlit/React concurrently) and `init-db` (creates the SQLite tables).
+- [ ] **CLI Manager Script (`Makefile`)**:
+  - Create a standard Unix `Makefile` to boot the application, replacing the need to keep multiple terminals open.
+  - Commands should include `make run` (starts FastAPI + Streamlit concurrently) and `make init-db` (creates the SQLite tables).
 - [ ] **Database Integration (SQLite)**:
   - Implement `SQLAlchemy` ORM and define models for `User`, `QueryHistory`, and `AnalysisResult`.
   - Restructure the FastAPI backend to store all final AI outputs into the `market_scholar.db`.
