@@ -61,3 +61,74 @@
 2026-03-15 12:49:34,226 - backend.router - INFO - Successfully processed query intent: single_stock
 2026-03-15 12:49:34,230 - backend.router - INFO - Received query request: How is AAPL doing?
 2026-03-15 12:49:34,230 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 12:51:11,549 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:51:11,549 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 12:51:11,555 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:51:11,555 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 12:51:46,452 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:51:46,453 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 12:51:46,457 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:51:46,458 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 12:55:17,150 - agents.aggregator_agent - INFO - Aggregator Agent started for AAPL
+2026-03-15 12:55:17,151 - agents.aggregator_agent - INFO - Aggregator Agent completed for AAPL
+2026-03-15 12:55:17,162 - services.data_fetcher - INFO - Loading cached history for AAPL from /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-1/test_get_cached_history_cache_0/AAPL_1y_1d.csv
+2026-03-15 12:55:17,181 - services.data_fetcher - INFO - Cache miss for AAPL history. Fetching from Yahoo Finance.
+2026-03-15 12:55:17,182 - services.data_fetcher - INFO - Saved history cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-1/test_get_cached_history_cache_1/AAPL_1y_1d.csv
+2026-03-15 12:55:17,184 - services.data_fetcher - INFO - Cache miss for AAPL news. Fetching from DuckDuckGo.
+2026-03-15 12:55:17,184 - services.data_fetcher - INFO - Saved news cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-1/test_get_cached_news_cache_mis0/aapl_news.json
+2026-03-15 12:55:17,187 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'AAPL' with max 1 results
+2026-03-15 12:55:17,187 - tools.duckduckgo_tool - INFO - Found 1 news items for query: 'AAPL'
+2026-03-15 12:55:17,189 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'AAPL' with max 5 results
+2026-03-15 12:55:17,189 - tools.duckduckgo_tool - ERROR - Error searching news for 'AAPL': API error
+2026-03-15 12:55:17,190 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 12:55:17,190 - agents.fundamental_agent - WARNING - No fundamental data found for AAPL
+2026-03-15 12:55:17,192 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 12:55:17,193 - agents.fundamental_agent - INFO - Fundamental Agent completed for AAPL
+2026-03-15 12:55:17,195 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 12:55:17,195 - services.indicator_calculator - WARNING - Not enough data to calculate technical indicators
+2026-03-15 12:55:17,201 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 12:55:17,209 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 20.0, 'trend': 'Bullish', 'rsi': 100.0, 'macd_crossover': 'None', 'support': 17.080808080808083, 'resistance': 21.0, 'volume_trend': 'Decreasing'}
+2026-03-15 12:55:17,212 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'How is AAPL doing?'
+2026-03-15 12:55:17,217 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 12:55:17,219 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 12:55:17,219 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 12:55:17,220 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 12:55:17,220 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 12:55:17,221 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 12:55:17,223 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'Analyze portfolio AAPL GOOG'
+2026-03-15 12:55:17,224 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 12:55:17,224 - backend.langgraph_pipeline - INFO - LangGraph Node: Portfolio
+2026-03-15 12:55:17,225 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 12:55:17,226 - agents.master_agent - INFO - Master Agent started for query: 'portfolio analysis'
+2026-03-15 12:55:17,227 - agents.master_agent - WARNING - No OpenAI key detected. Falling back to naive parsing.
+2026-03-15 12:55:17,230 - agents.master_agent - INFO - Master Agent started for query: 'How is AAPL doing?'
+2026-03-15 12:55:17,230 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['AAPL']
+2026-03-15 12:55:17,232 - agents.portfolio_agent - INFO - Portfolio Agent started for []
+2026-03-15 12:55:17,233 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 12:55:17,234 - agents.portfolio_agent - WARNING - Could not retrieve historical data for any tickers in portfolio.
+2026-03-15 12:55:17,236 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 12:55:17,238 - agents.portfolio_agent - INFO - Portfolio Agent completed successfully.
+2026-03-15 12:55:17,245 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:55:17,245 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 12:55:17,250 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:55:17,250 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 12:55:17,253 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 12:55:17,253 - agents.sentiment_agent - WARNING - No news found for AAPL
+2026-03-15 12:55:17,255 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 12:55:17,256 - agents.sentiment_agent - INFO - Sentiment Agent completed for AAPL
+2026-03-15 12:55:17,257 - services.sentiment_model - INFO - Analyzing sentiment for 0 news items
+2026-03-15 12:55:17,258 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 12:55:17,259 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.86 (Bullish)
+2026-03-15 12:55:17,260 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 12:55:17,260 - services.sentiment_model - INFO - Calculated overall sentiment score: -0.85 (Bearish)
+2026-03-15 12:55:18,136 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 12:55:18,137 - agents.technical_agent - WARNING - No historical data found for AAPL
+2026-03-15 12:55:18,139 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 12:55:18,140 - agents.technical_agent - INFO - Technical Agent completed for AAPL
+2026-03-15 12:55:18,143 - tools.yahoo_finance_tool - INFO - Fetching stock history for AAPL (period: 1y, interval: 1d)
+2026-03-15 12:55:18,143 - tools.yahoo_finance_tool - INFO - Successfully fetched 3 rows of data for AAPL
+2026-03-15 12:55:18,147 - tools.yahoo_finance_tool - INFO - Fetching stock history for INVALID (period: 1y, interval: 1d)
+2026-03-15 12:55:18,147 - tools.yahoo_finance_tool - WARNING - No historical data found for INVALID
+2026-03-15 12:55:18,149 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for AAPL
+2026-03-15 12:55:18,149 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for AAPL
+2026-03-15 12:55:18,149 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 1000, 'eps': 5.0, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
