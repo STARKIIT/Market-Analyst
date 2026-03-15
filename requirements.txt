@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+yfinance
+pandas
+numpy
+duckduckgo-search
+langgraph
+langchain
+langchain-openai
+langchain-community
+streamlit
+pytest
+pytest-mock
+pytest-asyncio
+vaderSentiment
