@@ -78,3 +78,21 @@ Create appropriate LLM prompt files first under `models/prompts/` (e.g., `fundam
 - [x] Run module tests for agents to guarantee structurally accurate string outputs.
 - [x] Test the FastAPI API via cURL or docs page.
 - [x] Review full end-to-end functionality via Streamlit.
+
+## Phase 8: V2 Upgrades (Indian Market Focus)
+- [ ] **Interactive Candlestick Charts** (`frontend/streamlit_app.py`):
+  - Add `plotly` or `lightweight-charts-python` to `requirements.txt`.
+  - Replace the static `st.line_chart` with an interactive Candlestick chart displaying Open, High, Low, Close (OHLC).
+  - Add quick-toggle buttons for different Indian market timeframes (1W, 1M, 6M, 1Y).
+- [ ] **Financial Metrics KPI Dashboard** (`frontend/streamlit_app.py`):
+  - Extract the core numeric data (PE Ratio, Debt, Margins) out of the Fundamental Agent's JSON response.
+  - Render a clean horizontal row of `st.metric()` cards across the top of the Results screen for instant at-a-glance health checks.
+- [ ] **Nifty 50 / Sensex Portfolio Benchmarking** (`agents/portfolio_agent.py` & `tools/yahoo_finance_tool.py`):
+  - Add logic to fetch historical performance of `^NSEI` (Nifty 50) and `^BSESN` (Sensex).
+  - Calculate the User's Portfolio 1-year returns and automatically plot a comparative benchmark chart against the indices.
+- [ ] **Corporate Announcements & Earnings** (`tools/news_tool.py` or new `corporate_tool.py`):
+  - Enhance the data fetcher to scrape localized financial websites (e.g., Screener, Moneycontrol, or NSE public feeds) for the latest quarterly earnings reports and official announcements for the requested ticker.
+  - Pass this hard data to the Fundamental Agent.
+- [ ] **FII / DII Institutional Activity Tracker**:
+  - Implement a daily/weekly tracking tool to fetch Foreign and Domestic Institutional flow data for the broader Indian market or specific stocks.
+  - Supply this institutional momentum data to the Technical/Aggregator agents.
