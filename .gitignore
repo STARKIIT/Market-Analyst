@@ -57,3 +57,5 @@ coverage.xml
 
 # Streamlit
 .streamlit/
+data/
+dump.log

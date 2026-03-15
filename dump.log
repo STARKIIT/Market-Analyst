@@ -132,3 +132,650 @@
 2026-03-15 12:55:18,149 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for AAPL
 2026-03-15 12:55:18,149 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for AAPL
 2026-03-15 12:55:18,149 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 1000, 'eps': 5.0, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
+2026-03-15 12:57:03,899 - agents.aggregator_agent - INFO - Aggregator Agent started for AAPL
+2026-03-15 12:57:03,900 - agents.aggregator_agent - INFO - Aggregator Agent completed for AAPL
+2026-03-15 12:57:03,910 - services.data_fetcher - INFO - Loading cached history for AAPL from /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-2/test_get_cached_history_cache_0/AAPL_1y_1d.csv
+2026-03-15 12:57:03,929 - services.data_fetcher - INFO - Cache miss for AAPL history. Fetching from Yahoo Finance.
+2026-03-15 12:57:03,930 - services.data_fetcher - INFO - Saved history cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-2/test_get_cached_history_cache_1/AAPL_1y_1d.csv
+2026-03-15 12:57:03,933 - services.data_fetcher - INFO - Cache miss for AAPL news. Fetching from DuckDuckGo.
+2026-03-15 12:57:03,933 - services.data_fetcher - INFO - Saved news cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-2/test_get_cached_news_cache_mis0/aapl_news.json
+2026-03-15 12:57:03,935 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'AAPL' with max 1 results
+2026-03-15 12:57:03,936 - tools.duckduckgo_tool - INFO - Found 1 news items for query: 'AAPL'
+2026-03-15 12:57:03,937 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'AAPL' with max 5 results
+2026-03-15 12:57:03,937 - tools.duckduckgo_tool - ERROR - Error searching news for 'AAPL': API error
+2026-03-15 12:57:03,939 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 12:57:03,939 - agents.fundamental_agent - WARNING - No fundamental data found for AAPL
+2026-03-15 12:57:03,941 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 12:57:03,942 - agents.fundamental_agent - INFO - Fundamental Agent completed for AAPL
+2026-03-15 12:57:03,943 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 12:57:03,943 - services.indicator_calculator - WARNING - Not enough data to calculate technical indicators
+2026-03-15 12:57:03,949 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 12:57:03,957 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 20.0, 'trend': 'Bullish', 'rsi': 100.0, 'macd_crossover': 'None', 'support': 17.080808080808083, 'resistance': 21.0, 'volume_trend': 'Increasing'}
+2026-03-15 12:57:03,960 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'How is AAPL doing?'
+2026-03-15 12:57:03,966 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 12:57:03,967 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 12:57:03,968 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 12:57:03,968 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 12:57:03,969 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 12:57:03,969 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 12:57:03,971 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'Analyze portfolio AAPL GOOG'
+2026-03-15 12:57:03,973 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 12:57:03,973 - backend.langgraph_pipeline - INFO - LangGraph Node: Portfolio
+2026-03-15 12:57:03,973 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 12:57:03,975 - agents.master_agent - INFO - Master Agent started for query: 'portfolio analysis'
+2026-03-15 12:57:03,975 - agents.master_agent - WARNING - No OpenAI key detected. Falling back to naive parsing.
+2026-03-15 12:57:03,979 - agents.master_agent - INFO - Master Agent started for query: 'How is AAPL doing?'
+2026-03-15 12:57:03,979 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['AAPL']
+2026-03-15 12:57:03,980 - agents.portfolio_agent - INFO - Portfolio Agent started for []
+2026-03-15 12:57:03,982 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 12:57:03,983 - agents.portfolio_agent - WARNING - Could not retrieve historical data for any tickers in portfolio.
+2026-03-15 12:57:03,985 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 12:57:03,987 - agents.portfolio_agent - INFO - Portfolio Agent completed successfully.
+2026-03-15 12:57:03,993 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:57:03,994 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 12:57:03,999 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 12:57:03,999 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 12:57:04,002 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 12:57:04,002 - agents.sentiment_agent - WARNING - No news found for AAPL
+2026-03-15 12:57:04,004 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 12:57:04,005 - agents.sentiment_agent - INFO - Sentiment Agent completed for AAPL
+2026-03-15 12:57:04,006 - services.sentiment_model - INFO - Analyzing sentiment for 0 news items
+2026-03-15 12:57:04,007 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 12:57:04,008 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.86 (Bullish)
+2026-03-15 12:57:04,009 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 12:57:04,009 - services.sentiment_model - INFO - Calculated overall sentiment score: -0.85 (Bearish)
+2026-03-15 12:57:04,876 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 12:57:04,876 - agents.technical_agent - WARNING - No historical data found for AAPL
+2026-03-15 12:57:04,878 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 12:57:04,879 - agents.technical_agent - INFO - Technical Agent completed for AAPL
+2026-03-15 12:57:04,883 - tools.yahoo_finance_tool - INFO - Fetching stock history for AAPL (period: 1y, interval: 1d)
+2026-03-15 12:57:04,883 - tools.yahoo_finance_tool - INFO - Successfully fetched 3 rows of data for AAPL
+2026-03-15 12:57:04,885 - tools.yahoo_finance_tool - INFO - Fetching stock history for INVALID (period: 1y, interval: 1d)
+2026-03-15 12:57:04,886 - tools.yahoo_finance_tool - WARNING - No historical data found for INVALID
+2026-03-15 12:57:04,887 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for AAPL
+2026-03-15 12:57:04,887 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for AAPL
+2026-03-15 12:57:04,887 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 1000, 'eps': 5.0, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
+2026-03-15 12:58:32,066 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 12:59:30,330 - backend.router - INFO - Received query request: how is relaince doing?
+2026-03-15 12:59:30,331 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is relaince doing?'
+2026-03-15 12:59:30,349 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 12:59:30,349 - agents.master_agent - INFO - Master Agent started for query: 'how is relaince doing?'
+2026-03-15 12:59:30,350 - agents.master_agent - WARNING - No OpenAI key detected. Falling back to naive parsing.
+2026-03-15 12:59:30,355 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 12:59:30,356 - agents.fundamental_agent - INFO - Fundamental Agent started for HOW
+2026-03-15 12:59:30,356 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for HOW
+2026-03-15 12:59:30,359 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 12:59:30,360 - agents.sentiment_agent - INFO - Sentiment Agent started for HOW
+2026-03-15 12:59:30,360 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 12:59:30,360 - agents.technical_agent - INFO - Technical Agent started for HOW
+2026-03-15 12:59:30,360 - services.data_fetcher - INFO - Cache miss for HOW history. Fetching from Yahoo Finance.
+2026-03-15 12:59:30,361 - tools.yahoo_finance_tool - INFO - Fetching stock history for HOW (period: 1y, interval: 1d)
+2026-03-15 12:59:30,360 - services.data_fetcher - INFO - Cache miss for HOW news. Fetching from DuckDuckGo.
+2026-03-15 12:59:30,361 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'HOW stock news' with max 5 results
+2026-03-15 12:59:32,294 - tools.duckduckgo_tool - INFO - Found 5 news items for query: 'HOW stock news'
+2026-03-15 12:59:32,294 - services.data_fetcher - INFO - Saved news cache for HOW to data/news_cache/how_news.json
+2026-03-15 12:59:32,294 - services.sentiment_model - INFO - Analyzing sentiment for 5 news items
+2026-03-15 12:59:32,297 - services.sentiment_model - INFO - Calculated overall sentiment score: -0.14 (Neutral)
+2026-03-15 12:59:32,316 - tools.yahoo_finance_tool - WARNING - No historical data found for HOW
+2026-03-15 12:59:32,317 - agents.technical_agent - WARNING - No historical data found for HOW
+2026-03-15 12:59:32,340 - agents.sentiment_agent - ERROR - Sentiment Agent LLM error for HOW: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2026-03-15 12:59:32,425 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for HOW
+2026-03-15 12:59:32,425 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': None, 'eps': None, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
+2026-03-15 12:59:32,426 - agents.fundamental_agent - ERROR - Fundamental Agent LLM error for HOW: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2026-03-15 12:59:32,426 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 12:59:32,426 - agents.aggregator_agent - INFO - Aggregator Agent started for HOW
+2026-03-15 12:59:32,427 - agents.aggregator_agent - ERROR - Aggregator Agent LLM error for HOW: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2026-03-15 12:59:32,441 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 12:59:32,441 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 13:05:05,372 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:05:27,778 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:05:29,937 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:05:45,478 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:06:01,911 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:06:04,062 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:06:05,622 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:06:07,994 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:06:09,521 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:06:18,409 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 13:06:18,410 - agents.fundamental_agent - WARNING - No fundamental data found for AAPL
+2026-03-15 13:06:18,412 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 13:06:18,413 - agents.fundamental_agent - INFO - Fundamental Agent completed for AAPL
+2026-03-15 13:06:18,414 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 13:06:18,414 - agents.technical_agent - WARNING - No historical data found for AAPL
+2026-03-15 13:06:18,418 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 13:06:18,419 - agents.technical_agent - INFO - Technical Agent completed for AAPL
+2026-03-15 13:06:18,420 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 13:06:18,420 - agents.sentiment_agent - WARNING - No news found for AAPL
+2026-03-15 13:06:18,422 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 13:06:18,422 - agents.sentiment_agent - INFO - Sentiment Agent completed for AAPL
+2026-03-15 13:06:18,424 - agents.aggregator_agent - INFO - Aggregator Agent started for AAPL
+2026-03-15 13:06:18,425 - agents.aggregator_agent - INFO - Aggregator Agent completed for AAPL
+2026-03-15 13:06:18,426 - agents.master_agent - INFO - Master Agent started for query: 'portfolio analysis'
+2026-03-15 13:06:18,427 - agents.master_agent - WARNING - No Gemini API key detected. Falling back to naive parsing.
+2026-03-15 13:06:18,430 - agents.master_agent - INFO - Master Agent started for query: 'How is AAPL doing?'
+2026-03-15 13:06:18,430 - agents.master_agent - WARNING - No Gemini API key detected. Falling back to naive parsing.
+2026-03-15 13:06:28,626 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:06:37,359 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 13:06:37,360 - agents.fundamental_agent - WARNING - No fundamental data found for AAPL
+2026-03-15 13:06:37,361 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 13:06:37,362 - agents.fundamental_agent - INFO - Fundamental Agent completed for AAPL
+2026-03-15 13:06:37,363 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 13:06:37,363 - agents.technical_agent - WARNING - No historical data found for AAPL
+2026-03-15 13:06:37,365 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 13:06:37,366 - agents.technical_agent - INFO - Technical Agent completed for AAPL
+2026-03-15 13:06:37,367 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 13:06:37,367 - agents.sentiment_agent - WARNING - No news found for AAPL
+2026-03-15 13:06:37,369 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 13:06:37,369 - agents.sentiment_agent - INFO - Sentiment Agent completed for AAPL
+2026-03-15 13:06:37,371 - agents.aggregator_agent - INFO - Aggregator Agent started for AAPL
+2026-03-15 13:06:37,371 - agents.aggregator_agent - INFO - Aggregator Agent completed for AAPL
+2026-03-15 13:06:37,372 - agents.master_agent - INFO - Master Agent started for query: 'portfolio analysis'
+2026-03-15 13:06:37,373 - agents.master_agent - WARNING - No Gemini API key detected. Falling back to naive parsing.
+2026-03-15 13:06:37,375 - agents.master_agent - INFO - Master Agent started for query: 'How is AAPL doing?'
+2026-03-15 13:06:37,375 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['AAPL']
+2026-03-15 13:07:59,426 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 13:08:53,907 - backend.router - INFO - Received query request: how is reliance doing?
+2026-03-15 13:08:53,909 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is reliance doing?'
+2026-03-15 13:08:53,942 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 13:08:53,943 - agents.master_agent - INFO - Master Agent started for query: 'how is reliance doing?'
+2026-03-15 13:08:56,664 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['RELIANCE.NS']
+2026-03-15 13:08:56,665 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 13:08:56,665 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 13:08:56,665 - agents.fundamental_agent - INFO - Fundamental Agent started for RELIANCE.NS
+2026-03-15 13:08:56,665 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 13:08:56,665 - agents.sentiment_agent - INFO - Sentiment Agent started for RELIANCE.NS
+2026-03-15 13:08:56,665 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for RELIANCE.NS
+2026-03-15 13:08:56,665 - agents.technical_agent - INFO - Technical Agent started for RELIANCE.NS
+2026-03-15 13:08:56,665 - services.data_fetcher - INFO - Cache miss for RELIANCE.NS news. Fetching from DuckDuckGo.
+2026-03-15 13:08:56,666 - services.data_fetcher - INFO - Cache miss for RELIANCE.NS history. Fetching from Yahoo Finance.
+2026-03-15 13:08:56,666 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'RELIANCE.NS stock news' with max 5 results
+2026-03-15 13:08:56,666 - tools.yahoo_finance_tool - INFO - Fetching stock history for RELIANCE.NS (period: 1y, interval: 1d)
+2026-03-15 13:08:58,266 - tools.yahoo_finance_tool - INFO - Successfully fetched 248 rows of data for RELIANCE.NS
+2026-03-15 13:08:58,271 - services.data_fetcher - INFO - Saved history cache for RELIANCE.NS to data/price_cache/RELIANCE.NS_1y_1d.csv
+2026-03-15 13:08:58,271 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 13:08:58,276 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 1380.699951171875, 'trend': 'Bearish', 'rsi': 41.8043123197836, 'macd_crossover': 'None', 'support': 1307.0, 'resistance': 1450.699951171875, 'volume_trend': 'Increasing'}
+2026-03-15 13:08:58,287 - tools.duckduckgo_tool - INFO - Found 0 news items for query: 'RELIANCE.NS stock news'
+2026-03-15 13:08:58,288 - agents.sentiment_agent - WARNING - No news found for RELIANCE.NS
+2026-03-15 13:08:58,411 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for RELIANCE.NS
+2026-03-15 13:08:58,412 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 10245479858176, 'eps': 61.44, 'pe_ratio': 22.47233, 'market_cap': 18684284239872, 'debt': 3745930018816, 'free_cash_flow': None, 'roe': None, 'profit_margin': 0.08122}
+2026-03-15 13:09:03,470 - agents.technical_agent - INFO - Technical Agent completed for RELIANCE.NS
+2026-03-15 13:09:04,028 - agents.fundamental_agent - INFO - Fundamental Agent completed for RELIANCE.NS
+2026-03-15 13:09:04,030 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 13:09:04,030 - agents.aggregator_agent - INFO - Aggregator Agent started for RELIANCE.NS
+2026-03-15 13:09:09,395 - agents.aggregator_agent - INFO - Aggregator Agent completed for RELIANCE.NS
+2026-03-15 13:09:09,406 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 13:09:09,406 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 14:01:58,036 - backend.router - INFO - Received query request: how is BEL doing?
+2026-03-15 14:01:58,073 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is BEL doing?'
+2026-03-15 14:01:58,100 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 14:01:58,100 - agents.master_agent - INFO - Master Agent started for query: 'how is BEL doing?'
+2026-03-15 14:02:00,339 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['BEL']
+2026-03-15 14:02:00,343 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 14:02:00,343 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 14:02:00,343 - agents.fundamental_agent - INFO - Fundamental Agent started for BEL
+2026-03-15 14:02:00,344 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 14:02:00,344 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for BEL
+2026-03-15 14:02:00,345 - agents.sentiment_agent - INFO - Sentiment Agent started for BEL
+2026-03-15 14:02:00,345 - agents.technical_agent - INFO - Technical Agent started for BEL
+2026-03-15 14:02:00,352 - services.data_fetcher - INFO - Cache miss for BEL history. Fetching from Yahoo Finance.
+2026-03-15 14:02:00,352 - tools.yahoo_finance_tool - INFO - Fetching stock history for BEL (period: 1y, interval: 1d)
+2026-03-15 14:02:00,352 - services.data_fetcher - INFO - Cache miss for BEL news. Fetching from DuckDuckGo.
+2026-03-15 14:02:00,352 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'BEL stock news' with max 5 results
+2026-03-15 14:02:01,932 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for BEL
+2026-03-15 14:02:01,932 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': None, 'eps': None, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
+2026-03-15 14:02:02,131 - tools.duckduckgo_tool - INFO - Found 5 news items for query: 'BEL stock news'
+2026-03-15 14:02:02,132 - services.data_fetcher - INFO - Saved news cache for BEL to data/news_cache/bel_news.json
+2026-03-15 14:02:02,132 - services.sentiment_model - INFO - Analyzing sentiment for 5 news items
+2026-03-15 14:02:02,139 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.6 (Bullish)
+2026-03-15 14:02:03,210 - tools.yahoo_finance_tool - WARNING - No historical data found for BEL
+2026-03-15 14:02:03,210 - agents.technical_agent - WARNING - No historical data found for BEL
+2026-03-15 14:02:05,111 - agents.fundamental_agent - INFO - Fundamental Agent completed for BEL
+2026-03-15 14:02:05,693 - agents.sentiment_agent - INFO - Sentiment Agent completed for BEL
+2026-03-15 14:02:05,710 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 14:02:05,711 - agents.aggregator_agent - INFO - Aggregator Agent started for BEL
+2026-03-15 14:02:18,773 - agents.aggregator_agent - INFO - Aggregator Agent completed for BEL
+2026-03-15 14:02:18,777 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 14:02:18,777 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 14:07:42,569 - backend.router - INFO - Received query request: how is BEL.NS doing?
+2026-03-15 14:07:42,570 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is BEL.NS doing?'
+2026-03-15 14:07:42,598 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 14:07:42,598 - agents.master_agent - INFO - Master Agent started for query: 'how is BEL.NS doing?'
+2026-03-15 14:07:44,318 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['BEL.NS']
+2026-03-15 14:07:44,320 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 14:07:44,321 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 14:07:44,321 - agents.fundamental_agent - INFO - Fundamental Agent started for BEL.NS
+2026-03-15 14:07:44,322 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 14:07:44,323 - agents.sentiment_agent - INFO - Sentiment Agent started for BEL.NS
+2026-03-15 14:07:44,323 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for BEL.NS
+2026-03-15 14:07:44,323 - agents.technical_agent - INFO - Technical Agent started for BEL.NS
+2026-03-15 14:07:44,327 - services.data_fetcher - INFO - Cache miss for BEL.NS news. Fetching from DuckDuckGo.
+2026-03-15 14:07:44,327 - services.data_fetcher - INFO - Cache miss for BEL.NS history. Fetching from Yahoo Finance.
+2026-03-15 14:07:44,328 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'BEL.NS stock news' with max 5 results
+2026-03-15 14:07:44,328 - tools.yahoo_finance_tool - INFO - Fetching stock history for BEL.NS (period: 1y, interval: 1d)
+2026-03-15 14:07:45,173 - tools.yahoo_finance_tool - INFO - Successfully fetched 248 rows of data for BEL.NS
+2026-03-15 14:07:45,188 - services.data_fetcher - INFO - Saved history cache for BEL.NS to data/price_cache/BEL.NS_1y_1d.csv
+2026-03-15 14:07:45,188 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 14:07:45,202 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 439.3999938964844, 'trend': 'Neutral', 'rsi': 50.05709099128822, 'macd_crossover': 'Negative', 'support': 427.28098408101744, 'resistance': 473.45001220703125, 'volume_trend': 'Increasing'}
+2026-03-15 14:07:45,454 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for BEL.NS
+2026-03-15 14:07:45,454 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 265352708096, 'eps': 8.17, 'pe_ratio': 53.782127, 'market_cap': 3211916738560, 'debt': 588899968, 'free_cash_flow': None, 'roe': None, 'profit_margin': 0.22475}
+2026-03-15 14:07:45,788 - tools.duckduckgo_tool - INFO - Found 0 news items for query: 'BEL.NS stock news'
+2026-03-15 14:07:45,788 - agents.sentiment_agent - WARNING - No news found for BEL.NS
+2026-03-15 14:07:49,060 - agents.technical_agent - INFO - Technical Agent completed for BEL.NS
+2026-03-15 14:07:51,030 - agents.fundamental_agent - INFO - Fundamental Agent completed for BEL.NS
+2026-03-15 14:07:51,032 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 14:07:51,032 - agents.aggregator_agent - INFO - Aggregator Agent started for BEL.NS
+2026-03-15 14:08:01,000 - agents.aggregator_agent - INFO - Aggregator Agent completed for BEL.NS
+2026-03-15 14:08:01,005 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 14:08:01,005 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 14:09:55,420 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 14:10:08,234 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 14:15:07,041 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 14:15:18,268 - agents.aggregator_agent - INFO - Aggregator Agent started for AAPL
+2026-03-15 14:15:18,270 - agents.aggregator_agent - INFO - Aggregator Agent completed for AAPL
+2026-03-15 14:15:18,281 - services.data_fetcher - INFO - Loading cached history for AAPL from /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-3/test_get_cached_history_cache_0/AAPL_1y_1d.csv
+2026-03-15 14:15:18,298 - services.data_fetcher - INFO - Cache miss for AAPL history. Fetching from Yahoo Finance.
+2026-03-15 14:15:18,298 - services.data_fetcher - INFO - Saved history cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-3/test_get_cached_history_cache_1/AAPL_1y_1d.csv
+2026-03-15 14:15:18,300 - services.data_fetcher - INFO - Cache miss for AAPL news. Fetching from DuckDuckGo.
+2026-03-15 14:15:18,301 - services.data_fetcher - INFO - Saved news cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-3/test_get_cached_news_cache_mis0/aapl_news.json
+2026-03-15 14:15:18,303 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'AAPL' with max 1 results
+2026-03-15 14:15:18,303 - tools.duckduckgo_tool - INFO - Found 1 news items for query: 'AAPL'
+2026-03-15 14:15:18,305 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'AAPL' with max 5 results
+2026-03-15 14:15:18,305 - tools.duckduckgo_tool - ERROR - Error searching news for 'AAPL': API error
+2026-03-15 14:15:18,306 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 14:15:18,306 - agents.fundamental_agent - WARNING - No fundamental data found for AAPL
+2026-03-15 14:15:18,308 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 14:15:18,309 - agents.fundamental_agent - INFO - Fundamental Agent completed for AAPL
+2026-03-15 14:15:18,311 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 14:15:18,311 - services.indicator_calculator - WARNING - Not enough data to calculate technical indicators
+2026-03-15 14:15:18,315 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 14:15:18,323 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 20.0, 'trend': 'Bullish', 'rsi': 100.0, 'macd_crossover': 'None', 'support': 17.080808080808083, 'resistance': 21.0, 'volume_trend': 'Increasing'}
+2026-03-15 14:15:18,326 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'How is AAPL doing?'
+2026-03-15 14:15:18,330 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 14:15:18,331 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 14:15:18,331 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 14:15:18,331 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 14:15:18,332 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 14:15:18,332 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 14:15:18,334 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'Analyze portfolio AAPL GOOG'
+2026-03-15 14:15:18,334 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 14:15:18,335 - backend.langgraph_pipeline - INFO - LangGraph Node: Portfolio
+2026-03-15 14:15:18,335 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 14:15:18,336 - agents.master_agent - INFO - Master Agent started for query: 'portfolio analysis'
+2026-03-15 14:15:18,337 - agents.master_agent - WARNING - No Gemini API key detected. Falling back to naive parsing.
+2026-03-15 14:15:18,339 - agents.master_agent - INFO - Master Agent started for query: 'How is AAPL doing?'
+2026-03-15 14:15:18,339 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['AAPL']
+2026-03-15 14:15:18,340 - agents.portfolio_agent - INFO - Portfolio Agent started for []
+2026-03-15 14:15:18,342 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 14:15:18,342 - agents.portfolio_agent - WARNING - Could not retrieve historical data for any tickers in portfolio.
+2026-03-15 14:15:18,343 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 14:15:18,346 - agents.portfolio_agent - INFO - Portfolio Agent completed successfully.
+2026-03-15 14:15:18,349 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 14:15:18,349 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 14:15:18,353 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 14:15:18,353 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 14:15:18,355 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 14:15:18,355 - agents.sentiment_agent - WARNING - No news found for AAPL
+2026-03-15 14:15:18,357 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 14:15:18,357 - agents.sentiment_agent - INFO - Sentiment Agent completed for AAPL
+2026-03-15 14:15:18,358 - services.sentiment_model - INFO - Analyzing sentiment for 0 news items
+2026-03-15 14:15:18,359 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 14:15:18,359 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.86 (Bullish)
+2026-03-15 14:15:18,360 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 14:15:18,360 - services.sentiment_model - INFO - Calculated overall sentiment score: -0.85 (Bearish)
+2026-03-15 14:15:19,099 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 14:15:19,099 - agents.technical_agent - WARNING - No historical data found for AAPL
+2026-03-15 14:15:19,101 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 14:15:19,101 - agents.technical_agent - INFO - Technical Agent completed for AAPL
+2026-03-15 14:15:19,103 - tools.yahoo_finance_tool - INFO - Fetching stock history for AAPL (period: 1y, interval: 1d)
+2026-03-15 14:15:19,103 - tools.yahoo_finance_tool - INFO - Successfully fetched 3 rows of data for AAPL.NS (requested: AAPL)
+2026-03-15 14:15:19,105 - tools.yahoo_finance_tool - INFO - Fetching stock history for INVALID (period: 1y, interval: 1d)
+2026-03-15 14:15:19,105 - tools.yahoo_finance_tool - WARNING - No historical data found for INVALID across attempted variations
+2026-03-15 14:15:19,106 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for AAPL
+2026-03-15 14:15:19,107 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for AAPL.NS (requested: AAPL)
+2026-03-15 14:15:19,107 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 1000, 'eps': 5.0, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
+2026-03-15 14:15:57,731 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 14:20:35,772 - backend.router - INFO - Received query request: how is BEL doing?
+2026-03-15 14:20:35,773 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is BEL doing?'
+2026-03-15 14:20:35,820 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 14:20:35,820 - agents.master_agent - INFO - Master Agent started for query: 'how is BEL doing?'
+2026-03-15 14:20:38,092 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['BEL']
+2026-03-15 14:20:38,095 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 14:20:38,095 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 14:20:38,095 - agents.fundamental_agent - INFO - Fundamental Agent started for BEL
+2026-03-15 14:20:38,096 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 14:20:38,096 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for BEL
+2026-03-15 14:20:38,096 - agents.sentiment_agent - INFO - Sentiment Agent started for BEL
+2026-03-15 14:20:38,096 - agents.technical_agent - INFO - Technical Agent started for BEL
+2026-03-15 14:20:38,097 - services.data_fetcher - INFO - Loading cached news for BEL from data/news_cache/bel_news.json
+2026-03-15 14:20:38,098 - services.data_fetcher - INFO - Cache miss for BEL history. Fetching from Yahoo Finance.
+2026-03-15 14:20:38,099 - tools.yahoo_finance_tool - INFO - Fetching stock history for BEL (period: 1y, interval: 1d)
+2026-03-15 14:20:38,099 - services.sentiment_model - INFO - Analyzing sentiment for 5 news items
+2026-03-15 14:20:38,103 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.6 (Bullish)
+2026-03-15 14:20:39,168 - tools.yahoo_finance_tool - INFO - Successfully fetched 248 rows of data for BEL.NS (requested: BEL)
+2026-03-15 14:20:39,175 - services.data_fetcher - INFO - Saved history cache for BEL to data/price_cache/BEL_1y_1d.csv
+2026-03-15 14:20:39,175 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 14:20:39,181 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 439.3999938964844, 'trend': 'Neutral', 'rsi': 50.05709099128822, 'macd_crossover': 'Negative', 'support': 427.28098408101744, 'resistance': 473.45001220703125, 'volume_trend': 'Increasing'}
+2026-03-15 14:20:39,322 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for BEL.NS (requested: BEL)
+2026-03-15 14:20:39,322 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 265352708096, 'eps': 8.17, 'pe_ratio': 53.782127, 'market_cap': 3211916738560, 'debt': 588899968, 'free_cash_flow': None, 'roe': None, 'profit_margin': 0.22475}
+2026-03-15 14:20:41,313 - agents.sentiment_agent - INFO - Sentiment Agent completed for BEL
+2026-03-15 14:20:43,866 - agents.technical_agent - INFO - Technical Agent completed for BEL
+2026-03-15 14:20:44,498 - agents.fundamental_agent - INFO - Fundamental Agent completed for BEL
+2026-03-15 14:20:44,499 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 14:20:44,499 - agents.aggregator_agent - INFO - Aggregator Agent started for BEL
+2026-03-15 14:20:55,751 - agents.aggregator_agent - INFO - Aggregator Agent completed for BEL
+2026-03-15 14:20:55,756 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 14:20:55,756 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 14:21:38,091 - backend.router - INFO - Received query request: how is BEL.NS doing?
+2026-03-15 14:21:38,091 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is BEL.NS doing?'
+2026-03-15 14:21:38,112 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 14:21:38,113 - agents.master_agent - INFO - Master Agent started for query: 'how is BEL.NS doing?'
+2026-03-15 14:21:39,948 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['BEL.NS']
+2026-03-15 14:21:39,950 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 14:21:39,950 - agents.fundamental_agent - INFO - Fundamental Agent started for BEL.NS
+2026-03-15 14:21:39,950 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for BEL.NS
+2026-03-15 14:21:39,955 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 14:21:39,955 - agents.sentiment_agent - INFO - Sentiment Agent started for BEL.NS
+2026-03-15 14:21:39,955 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 14:21:39,955 - services.data_fetcher - INFO - Cache miss for BEL.NS news. Fetching from DuckDuckGo.
+2026-03-15 14:21:39,956 - agents.technical_agent - INFO - Technical Agent started for BEL.NS
+2026-03-15 14:21:39,956 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'BEL stock news' with max 5 results
+2026-03-15 14:21:39,965 - services.data_fetcher - INFO - Loading cached history for BEL.NS from data/price_cache/BEL.NS_1y_1d.csv
+2026-03-15 14:21:40,038 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 14:21:40,044 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 439.3999938964844, 'trend': 'Neutral', 'rsi': 50.05709099128821, 'macd_crossover': 'Negative', 'support': 427.28098408101744, 'resistance': 473.4500122070313, 'volume_trend': 'Increasing'}
+2026-03-15 14:21:40,702 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for BEL.NS (requested: BEL.NS)
+2026-03-15 14:21:40,702 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 265352708096, 'eps': 8.17, 'pe_ratio': 53.782127, 'market_cap': 3211916738560, 'debt': 588899968, 'free_cash_flow': None, 'roe': None, 'profit_margin': 0.22475}
+2026-03-15 14:21:41,607 - tools.duckduckgo_tool - INFO - Found 5 news items for query: 'BEL stock news'
+2026-03-15 14:21:41,610 - services.data_fetcher - INFO - Saved news cache for BEL.NS to data/news_cache/bel.ns_news.json
+2026-03-15 14:21:41,610 - services.sentiment_model - INFO - Analyzing sentiment for 5 news items
+2026-03-15 14:21:41,616 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.6 (Bullish)
+2026-03-15 14:21:45,327 - agents.technical_agent - INFO - Technical Agent completed for BEL.NS
+2026-03-15 14:21:46,125 - agents.sentiment_agent - INFO - Sentiment Agent completed for BEL.NS
+2026-03-15 14:21:49,388 - agents.fundamental_agent - INFO - Fundamental Agent completed for BEL.NS
+2026-03-15 14:21:49,390 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 14:21:49,390 - agents.aggregator_agent - INFO - Aggregator Agent started for BEL.NS
+2026-03-15 14:22:59,708 - agents.aggregator_agent - ERROR - Aggregator Agent LLM error for BEL.NS: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 592.454154ms. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+}
+]
+2026-03-15 14:22:59,750 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 14:22:59,752 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 14:27:18,260 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 14:34:08,695 - backend.router - INFO - Received query request: how is BEL doing?
+2026-03-15 14:34:08,698 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is BEL doing?'
+2026-03-15 14:34:08,836 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 14:34:08,842 - agents.master_agent - INFO - Master Agent started for query: 'how is BEL doing?'
+2026-03-15 14:34:13,561 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['BEL']
+2026-03-15 14:34:13,563 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 14:34:13,563 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 14:34:13,563 - agents.fundamental_agent - INFO - Fundamental Agent started for BEL
+2026-03-15 14:34:13,564 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 14:34:13,564 - agents.sentiment_agent - INFO - Sentiment Agent started for BEL
+2026-03-15 14:34:13,564 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for BEL
+2026-03-15 14:34:13,564 - services.data_fetcher - INFO - Loading cached news for BEL from data/news_cache/bel_news.json
+2026-03-15 14:34:13,564 - agents.technical_agent - INFO - Technical Agent started for BEL
+2026-03-15 14:34:13,565 - services.data_fetcher - INFO - Loading cached history for BEL from data/price_cache/BEL_1y_1d.csv
+2026-03-15 14:34:13,569 - services.sentiment_model - INFO - Analyzing sentiment for 5 news items
+2026-03-15 14:34:13,573 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.6 (Bullish)
+2026-03-15 14:34:13,601 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 14:34:13,608 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 439.3999938964844, 'trend': 'Neutral', 'rsi': 50.05709099128821, 'macd_crossover': 'Negative', 'support': 427.28098408101744, 'resistance': 473.4500122070313, 'volume_trend': 'Increasing'}
+2026-03-15 14:34:14,955 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for BEL.NS (requested: BEL)
+2026-03-15 14:34:14,955 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 265352708096, 'eps': 8.17, 'pe_ratio': 53.782127, 'market_cap': 3211916738560, 'debt': 588899968, 'free_cash_flow': None, 'roe': None, 'profit_margin': 0.22475}
+2026-03-15 14:34:17,036 - agents.sentiment_agent - INFO - Sentiment Agent completed for BEL
+2026-03-15 14:34:17,601 - agents.technical_agent - INFO - Technical Agent completed for BEL
+2026-03-15 14:34:21,286 - agents.fundamental_agent - INFO - Fundamental Agent completed for BEL
+2026-03-15 14:34:21,288 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 14:34:21,288 - agents.aggregator_agent - INFO - Aggregator Agent started for BEL
+2026-03-15 14:34:29,675 - agents.aggregator_agent - INFO - Aggregator Agent completed for BEL
+2026-03-15 14:34:29,678 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 14:34:29,679 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 20:55:29,928 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 20:56:57,137 - backend.router - INFO - Received query request: how is asian paints
+2026-03-15 20:56:57,138 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is asian paints'
+2026-03-15 20:56:57,162 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 20:56:57,163 - agents.master_agent - INFO - Master Agent started for query: 'how is asian paints'
+2026-03-15 20:56:59,108 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['ASIANPAINT.NS']
+2026-03-15 20:56:59,109 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 20:56:59,110 - agents.fundamental_agent - INFO - Fundamental Agent started for ASIANPAINT.NS
+2026-03-15 20:56:59,110 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 20:56:59,110 - agents.sentiment_agent - INFO - Sentiment Agent started for ASIANPAINT.NS
+2026-03-15 20:56:59,110 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 20:56:59,110 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for ASIANPAINT.NS
+2026-03-15 20:56:59,110 - agents.technical_agent - INFO - Technical Agent started for ASIANPAINT.NS
+2026-03-15 20:56:59,110 - services.data_fetcher - INFO - Cache miss for ASIANPAINT.NS news. Fetching from DuckDuckGo.
+2026-03-15 20:56:59,110 - services.data_fetcher - INFO - Cache miss for ASIANPAINT.NS history. Fetching from Yahoo Finance.
+2026-03-15 20:56:59,111 - tools.duckduckgo_tool - INFO - Searching DuckDuckGo news for query: 'ASIANPAINT stock news' with max 5 results
+2026-03-15 20:56:59,111 - tools.yahoo_finance_tool - INFO - Fetching stock history for ASIANPAINT.NS (period: 1y, interval: 1d)
+2026-03-15 20:57:00,709 - tools.duckduckgo_tool - INFO - Found 0 news items for query: 'ASIANPAINT stock news'
+2026-03-15 20:57:00,709 - agents.sentiment_agent - WARNING - No news found for ASIANPAINT.NS
+2026-03-15 20:57:01,124 - tools.yahoo_finance_tool - INFO - Successfully fetched 248 rows of data for ASIANPAINT.NS (requested: ASIANPAINT.NS)
+2026-03-15 20:57:01,130 - services.data_fetcher - INFO - Saved history cache for ASIANPAINT.NS to data/price_cache/ASIANPAINT.NS_1y_1d.csv
+2026-03-15 20:57:01,130 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 20:57:01,135 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 2196.800048828125, 'trend': 'Bearish', 'rsi': 18.358343046654, 'macd_crossover': 'None', 'support': 2162.60009765625, 'resistance': 2452.39990234375, 'volume_trend': 'Decreasing'}
+2026-03-15 20:57:01,261 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for ASIANPAINT.NS (requested: ASIANPAINT.NS)
+2026-03-15 20:57:01,261 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 346495287296, 'eps': 40.2, 'pe_ratio': 54.646767, 'market_cap': 2105839976448, 'debt': 35570900992, 'free_cash_flow': None, 'roe': None, 'profit_margin': 0.11098}
+2026-03-15 20:57:06,993 - agents.fundamental_agent - INFO - Fundamental Agent completed for ASIANPAINT.NS
+2026-03-15 20:57:07,860 - agents.technical_agent - INFO - Technical Agent completed for ASIANPAINT.NS
+2026-03-15 20:57:07,864 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 20:57:07,864 - agents.aggregator_agent - INFO - Aggregator Agent started for ASIANPAINT.NS
+2026-03-15 20:57:17,910 - agents.aggregator_agent - INFO - Aggregator Agent completed for ASIANPAINT.NS
+2026-03-15 20:57:17,915 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 20:57:17,915 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 21:02:58,486 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 21:03:13,195 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 21:03:30,337 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 21:03:54,868 - agents.aggregator_agent - INFO - Aggregator Agent started for AAPL
+2026-03-15 21:03:54,869 - agents.aggregator_agent - INFO - Aggregator Agent completed for AAPL
+2026-03-15 21:03:54,883 - services.data_fetcher - INFO - Loading cached history for AAPL from /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-4/test_get_cached_history_cache_0/AAPL_1y_1d.csv
+2026-03-15 21:03:54,902 - services.data_fetcher - INFO - Cache miss for AAPL history. Fetching from Yahoo Finance.
+2026-03-15 21:03:54,905 - services.data_fetcher - INFO - Saved history cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-4/test_get_cached_history_cache_1/AAPL_1y_1d.csv
+2026-03-15 21:03:54,908 - services.data_fetcher - INFO - Cache miss for AAPL news. Fetching from Google News.
+2026-03-15 21:03:54,909 - services.data_fetcher - INFO - Saved news cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-4/test_get_cached_news_cache_mis0/aapl_news.json
+2026-03-15 21:03:55,174 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 21:03:55,174 - agents.fundamental_agent - WARNING - No fundamental data found for AAPL
+2026-03-15 21:03:55,177 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 21:03:55,178 - agents.fundamental_agent - INFO - Fundamental Agent completed for AAPL
+2026-03-15 21:03:55,180 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 21:03:55,180 - services.indicator_calculator - WARNING - Not enough data to calculate technical indicators
+2026-03-15 21:03:55,186 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 21:03:55,193 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 20.0, 'trend': 'Bullish', 'rsi': 100.0, 'macd_crossover': 'None', 'support': 17.080808080808083, 'resistance': 21.0, 'volume_trend': 'Decreasing'}
+2026-03-15 21:03:55,196 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'How is AAPL doing?'
+2026-03-15 21:03:55,201 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 21:03:55,203 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 21:03:55,203 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 21:03:55,203 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 21:03:55,204 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 21:03:55,205 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 21:03:55,209 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'Analyze portfolio AAPL GOOG'
+2026-03-15 21:03:55,212 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 21:03:55,214 - backend.langgraph_pipeline - INFO - LangGraph Node: Portfolio
+2026-03-15 21:03:55,214 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 21:03:55,219 - agents.master_agent - INFO - Master Agent started for query: 'portfolio analysis'
+2026-03-15 21:03:55,219 - agents.master_agent - WARNING - No Gemini API key detected. Falling back to naive parsing.
+2026-03-15 21:03:55,226 - agents.master_agent - INFO - Master Agent started for query: 'How is AAPL doing?'
+2026-03-15 21:03:55,227 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['AAPL']
+2026-03-15 21:03:55,230 - tools.news_tool - INFO - Searching Google News for query: 'AAPL' with max 1 results
+2026-03-15 21:03:55,231 - tools.news_tool - INFO - Found 1 news items for query: 'AAPL'
+2026-03-15 21:03:55,233 - tools.news_tool - INFO - Searching Google News for query: 'AAPL' with max 5 results
+2026-03-15 21:03:55,234 - tools.news_tool - ERROR - Error searching news for 'AAPL': API error
+2026-03-15 21:03:55,237 - agents.portfolio_agent - INFO - Portfolio Agent started for []
+2026-03-15 21:03:55,240 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 21:03:55,241 - agents.portfolio_agent - WARNING - Could not retrieve historical data for any tickers in portfolio.
+2026-03-15 21:03:55,243 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 21:03:55,245 - agents.portfolio_agent - INFO - Portfolio Agent completed successfully.
+2026-03-15 21:03:55,253 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 21:03:55,254 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 21:03:55,261 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 21:03:55,262 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 21:03:55,267 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 21:03:55,267 - agents.sentiment_agent - WARNING - No news found for AAPL
+2026-03-15 21:03:55,275 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 21:03:55,277 - agents.sentiment_agent - INFO - Sentiment Agent completed for AAPL
+2026-03-15 21:03:55,280 - services.sentiment_model - INFO - Analyzing sentiment for 0 news items
+2026-03-15 21:03:55,283 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 21:03:55,285 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.86 (Bullish)
+2026-03-15 21:03:55,290 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 21:03:55,292 - services.sentiment_model - INFO - Calculated overall sentiment score: -0.85 (Bearish)
+2026-03-15 21:03:56,337 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 21:03:56,338 - agents.technical_agent - WARNING - No historical data found for AAPL
+2026-03-15 21:03:56,342 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 21:03:56,343 - agents.technical_agent - INFO - Technical Agent completed for AAPL
+2026-03-15 21:03:56,345 - tools.yahoo_finance_tool - INFO - Fetching stock history for AAPL (period: 1y, interval: 1d)
+2026-03-15 21:03:56,345 - tools.yahoo_finance_tool - INFO - Successfully fetched 3 rows of data for AAPL.NS (requested: AAPL)
+2026-03-15 21:03:56,348 - tools.yahoo_finance_tool - INFO - Fetching stock history for INVALID (period: 1y, interval: 1d)
+2026-03-15 21:03:56,349 - tools.yahoo_finance_tool - WARNING - No historical data found for INVALID across attempted variations
+2026-03-15 21:03:56,350 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for AAPL
+2026-03-15 21:03:56,351 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for AAPL.NS (requested: AAPL)
+2026-03-15 21:03:56,351 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 1000, 'eps': 5.0, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
+2026-03-15 21:04:26,573 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 21:04:37,186 - agents.aggregator_agent - INFO - Aggregator Agent started for AAPL
+2026-03-15 21:04:37,187 - agents.aggregator_agent - INFO - Aggregator Agent completed for AAPL
+2026-03-15 21:04:37,193 - services.data_fetcher - INFO - Loading cached history for AAPL from /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-5/test_get_cached_history_cache_0/AAPL_1y_1d.csv
+2026-03-15 21:04:37,202 - services.data_fetcher - INFO - Cache miss for AAPL history. Fetching from Yahoo Finance.
+2026-03-15 21:04:37,203 - services.data_fetcher - INFO - Saved history cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-5/test_get_cached_history_cache_1/AAPL_1y_1d.csv
+2026-03-15 21:04:37,204 - services.data_fetcher - INFO - Cache miss for AAPL news. Fetching from Google News.
+2026-03-15 21:04:37,205 - services.data_fetcher - INFO - Saved news cache for AAPL to /private/var/folders/4l/b09t5pks21s9klvcvqq5vl5h0000gn/T/pytest-of-likhityadav/pytest-5/test_get_cached_news_cache_mis0/aapl_news.json
+2026-03-15 21:04:37,206 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 21:04:37,206 - agents.fundamental_agent - WARNING - No fundamental data found for AAPL
+2026-03-15 21:04:37,208 - agents.fundamental_agent - INFO - Fundamental Agent started for AAPL
+2026-03-15 21:04:37,208 - agents.fundamental_agent - INFO - Fundamental Agent completed for AAPL
+2026-03-15 21:04:37,210 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 21:04:37,210 - services.indicator_calculator - WARNING - Not enough data to calculate technical indicators
+2026-03-15 21:04:37,211 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 21:04:37,214 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 20.0, 'trend': 'Bullish', 'rsi': 100.0, 'macd_crossover': 'None', 'support': 17.080808080808083, 'resistance': 21.0, 'volume_trend': 'Increasing'}
+2026-03-15 21:04:37,216 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'How is AAPL doing?'
+2026-03-15 21:04:37,220 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 21:04:37,221 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 21:04:37,221 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 21:04:37,221 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 21:04:37,222 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 21:04:37,222 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 21:04:37,224 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'Analyze portfolio AAPL GOOG'
+2026-03-15 21:04:37,225 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 21:04:37,226 - backend.langgraph_pipeline - INFO - LangGraph Node: Portfolio
+2026-03-15 21:04:37,226 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 21:04:37,227 - agents.master_agent - INFO - Master Agent started for query: 'portfolio analysis'
+2026-03-15 21:04:37,228 - agents.master_agent - WARNING - No Gemini API key detected. Falling back to naive parsing.
+2026-03-15 21:04:37,230 - agents.master_agent - INFO - Master Agent started for query: 'How is AAPL doing?'
+2026-03-15 21:04:37,230 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['AAPL']
+2026-03-15 21:04:37,231 - tools.news_tool - INFO - Searching Google News for query: 'AAPL' with max 1 results
+2026-03-15 21:04:37,232 - tools.news_tool - INFO - Found 1 news items for query: 'AAPL'
+2026-03-15 21:04:37,233 - tools.news_tool - INFO - Searching Google News for query: 'AAPL' with max 5 results
+2026-03-15 21:04:37,233 - tools.news_tool - ERROR - Error searching news for 'AAPL': API error
+2026-03-15 21:04:37,233 - agents.portfolio_agent - INFO - Portfolio Agent started for []
+2026-03-15 21:04:37,235 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 21:04:37,237 - agents.portfolio_agent - WARNING - Could not retrieve historical data for any tickers in portfolio.
+2026-03-15 21:04:37,239 - agents.portfolio_agent - INFO - Portfolio Agent started for ['AAPL', 'GOOG']
+2026-03-15 21:04:37,240 - agents.portfolio_agent - INFO - Portfolio Agent completed successfully.
+2026-03-15 21:04:37,246 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 21:04:37,246 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 21:04:37,250 - backend.router - INFO - Received query request: How is AAPL doing?
+2026-03-15 21:04:37,250 - backend.router - ERROR - Error processing query: Pipeline failure
+2026-03-15 21:04:37,252 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 21:04:37,252 - agents.sentiment_agent - WARNING - No news found for AAPL
+2026-03-15 21:04:37,254 - agents.sentiment_agent - INFO - Sentiment Agent started for AAPL
+2026-03-15 21:04:37,255 - agents.sentiment_agent - INFO - Sentiment Agent completed for AAPL
+2026-03-15 21:04:37,256 - services.sentiment_model - INFO - Analyzing sentiment for 0 news items
+2026-03-15 21:04:37,256 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 21:04:37,257 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.86 (Bullish)
+2026-03-15 21:04:37,258 - services.sentiment_model - INFO - Analyzing sentiment for 1 news items
+2026-03-15 21:04:37,258 - services.sentiment_model - INFO - Calculated overall sentiment score: -0.85 (Bearish)
+2026-03-15 21:04:37,913 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 21:04:37,913 - agents.technical_agent - WARNING - No historical data found for AAPL
+2026-03-15 21:04:37,915 - agents.technical_agent - INFO - Technical Agent started for AAPL
+2026-03-15 21:04:37,916 - agents.technical_agent - INFO - Technical Agent completed for AAPL
+2026-03-15 21:04:37,917 - tools.yahoo_finance_tool - INFO - Fetching stock history for AAPL (period: 1y, interval: 1d)
+2026-03-15 21:04:37,917 - tools.yahoo_finance_tool - INFO - Successfully fetched 3 rows of data for AAPL.NS (requested: AAPL)
+2026-03-15 21:04:37,919 - tools.yahoo_finance_tool - INFO - Fetching stock history for INVALID (period: 1y, interval: 1d)
+2026-03-15 21:04:37,919 - tools.yahoo_finance_tool - WARNING - No historical data found for INVALID across attempted variations
+2026-03-15 21:04:37,921 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for AAPL
+2026-03-15 21:04:37,921 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for AAPL.NS (requested: AAPL)
+2026-03-15 21:04:37,921 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 1000, 'eps': 5.0, 'pe_ratio': None, 'market_cap': None, 'debt': None, 'free_cash_flow': None, 'roe': None, 'profit_margin': None}
+2026-03-15 21:04:54,568 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 21:06:03,561 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 21:07:07,861 - backend.router - INFO - Received query request: how is BHEL doing
+2026-03-15 21:07:07,864 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'how is BHEL doing'
+2026-03-15 21:07:07,889 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 21:07:07,889 - agents.master_agent - INFO - Master Agent started for query: 'how is BHEL doing'
+2026-03-15 21:07:09,517 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['BHEL.NS']
+2026-03-15 21:07:09,518 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 21:07:09,518 - agents.fundamental_agent - INFO - Fundamental Agent started for BHEL.NS
+2026-03-15 21:07:09,518 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for BHEL.NS
+2026-03-15 21:07:09,518 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 21:07:09,518 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 21:07:09,519 - agents.sentiment_agent - INFO - Sentiment Agent started for BHEL.NS
+2026-03-15 21:07:09,519 - agents.technical_agent - INFO - Technical Agent started for BHEL.NS
+2026-03-15 21:07:09,519 - services.data_fetcher - INFO - Cache miss for BHEL.NS news. Fetching from Google News.
+2026-03-15 21:07:09,520 - services.data_fetcher - INFO - Cache miss for BHEL.NS history. Fetching from Yahoo Finance.
+2026-03-15 21:07:09,520 - tools.news_tool - INFO - Searching Google News for query: 'BHEL.NS stock OR share market news' with max 5 results
+2026-03-15 21:07:09,520 - tools.yahoo_finance_tool - INFO - Fetching stock history for BHEL.NS (period: 1y, interval: 1d)
+2026-03-15 21:07:10,934 - tools.yahoo_finance_tool - INFO - Successfully fetched 248 rows of data for BHEL.NS (requested: BHEL.NS)
+2026-03-15 21:07:10,939 - services.data_fetcher - INFO - Saved history cache for BHEL.NS to data/price_cache/BHEL.NS_1y_1d.csv
+2026-03-15 21:07:10,939 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 21:07:10,943 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 258.5, 'trend': 'Bearish', 'rsi': 50.89686896434694, 'macd_crossover': 'None', 'support': 247.1999969482422, 'resistance': 270.3500061035156, 'volume_trend': 'Decreasing'}
+2026-03-15 21:07:11,001 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for BHEL.NS (requested: BHEL.NS)
+2026-03-15 21:07:11,001 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 304651796480, 'eps': 2.35, 'pe_ratio': 110.00001, 'market_cap': 900113367040, 'debt': 109693100032, 'free_cash_flow': None, 'roe': None, 'profit_margin': 0.026730001}
+2026-03-15 21:07:13,873 - tools.news_tool - INFO - Found 5 news items for query: 'BHEL.NS stock OR share market news'
+2026-03-15 21:07:13,874 - services.data_fetcher - INFO - Saved news cache for BHEL.NS to data/news_cache/bhel.ns_news.json
+2026-03-15 21:07:13,874 - services.sentiment_model - INFO - Analyzing sentiment for 5 news items
+2026-03-15 21:07:13,877 - services.sentiment_model - INFO - Calculated overall sentiment score: 0.11 (Neutral)
+2026-03-15 21:07:15,758 - agents.fundamental_agent - INFO - Fundamental Agent completed for BHEL.NS
+2026-03-15 21:07:17,199 - agents.technical_agent - INFO - Technical Agent completed for BHEL.NS
+2026-03-15 21:07:20,568 - agents.sentiment_agent - INFO - Sentiment Agent completed for BHEL.NS
+2026-03-15 21:07:20,569 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 21:07:20,569 - agents.aggregator_agent - INFO - Aggregator Agent started for BHEL.NS
+2026-03-15 21:07:28,386 - agents.aggregator_agent - INFO - Aggregator Agent completed for BHEL.NS
+2026-03-15 21:07:28,393 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 21:07:28,393 - backend.router - INFO - Successfully processed query intent: single_stock
+2026-03-15 21:16:12,865 - backend.main - INFO - Starting up Market Agent FastAPI backend...
+2026-03-15 21:19:07,274 - backend.router - INFO - Received query request: Is it okay to buy Infosys stock
+2026-03-15 21:19:07,278 - backend.langgraph_pipeline - INFO - Starting pipeline execution for query: 'Is it okay to buy Infosys stock'
+2026-03-15 21:19:07,349 - backend.langgraph_pipeline - INFO - LangGraph Node: Routing Query
+2026-03-15 21:19:07,351 - agents.master_agent - INFO - Master Agent started for query: 'Is it okay to buy Infosys stock'
+2026-03-15 21:19:10,956 - agents.master_agent - INFO - Master Agent classified intent: single_stock with tickers: ['INFY']
+2026-03-15 21:19:10,959 - backend.langgraph_pipeline - INFO - LangGraph Node: Fundamental
+2026-03-15 21:19:10,960 - agents.fundamental_agent - INFO - Fundamental Agent started for INFY
+2026-03-15 21:19:10,960 - backend.langgraph_pipeline - INFO - LangGraph Node: Sentiment
+2026-03-15 21:19:10,960 - backend.langgraph_pipeline - INFO - LangGraph Node: Technical
+2026-03-15 21:19:10,961 - tools.yahoo_finance_tool - INFO - Fetching fundamentals for INFY
+2026-03-15 21:19:10,961 - agents.sentiment_agent - INFO - Sentiment Agent started for INFY
+2026-03-15 21:19:10,961 - agents.technical_agent - INFO - Technical Agent started for INFY
+2026-03-15 21:19:10,962 - services.data_fetcher - INFO - Cache miss for INFY news. Fetching from Google News.
+2026-03-15 21:19:10,962 - services.data_fetcher - INFO - Cache miss for INFY history. Fetching from Yahoo Finance.
+2026-03-15 21:19:10,963 - tools.news_tool - INFO - Searching Google News for query: 'INFY stock OR share market news' with max 5 results
+2026-03-15 21:19:10,963 - tools.yahoo_finance_tool - INFO - Fetching stock history for INFY (period: 1y, interval: 1d)
+2026-03-15 21:19:12,252 - tools.yahoo_finance_tool - INFO - Successfully fetched 248 rows of data for INFY.NS (requested: INFY)
+2026-03-15 21:19:12,258 - services.data_fetcher - INFO - Saved history cache for INFY to data/price_cache/INFY_1y_1d.csv
+2026-03-15 21:19:12,258 - services.indicator_calculator - INFO - Calculating technical indicators
+2026-03-15 21:19:12,264 - services.indicator_calculator - INFO - Calculated indicators: {'current_price': 1248.300048828125, 'trend': 'Bearish', 'rsi': 25.200940086782566, 'macd_crossover': 'None', 'support': 1242.5999755859375, 'resistance': 1431.0, 'volume_trend': 'Decreasing'}
+2026-03-15 21:19:12,264 - tools.yahoo_finance_tool - INFO - Successfully fetched fundamentals for INFY.NS (requested: INFY)
+2026-03-15 21:19:12,265 - tools.yahoo_finance_tool - DEBUG - Fundamentals data: {'revenue': 19847000064, 'eps': 71.4, 'pe_ratio': 17.483194, 'market_cap': 5051129528320, 'debt': 978000000, 'free_cash_flow': 3137812480, 'roe': 0.32683, 'profit_margin': 0.16153999}
+2026-03-15 21:19:15,665 - tools.news_tool - INFO - Found 5 news items for query: 'INFY stock OR share market news'
+2026-03-15 21:19:15,666 - services.data_fetcher - INFO - Saved news cache for INFY to data/news_cache/infy_news.json
+2026-03-15 21:19:15,666 - services.sentiment_model - INFO - Analyzing sentiment for 5 news items
+2026-03-15 21:19:15,670 - services.sentiment_model - INFO - Calculated overall sentiment score: -0.14 (Neutral)
+2026-03-15 21:19:19,130 - agents.technical_agent - INFO - Technical Agent completed for INFY
+2026-03-15 21:19:20,687 - agents.fundamental_agent - INFO - Fundamental Agent completed for INFY
+2026-03-15 21:19:20,711 - agents.sentiment_agent - INFO - Sentiment Agent completed for INFY
+2026-03-15 21:19:20,712 - backend.langgraph_pipeline - INFO - LangGraph Node: Aggregator
+2026-03-15 21:19:20,712 - agents.aggregator_agent - INFO - Aggregator Agent started for INFY
+2026-03-15 21:19:29,991 - agents.aggregator_agent - INFO - Aggregator Agent completed for INFY
+2026-03-15 21:19:29,997 - backend.langgraph_pipeline - INFO - Pipeline execution complete
+2026-03-15 21:19:29,998 - backend.router - INFO - Successfully processed query intent: single_stock
